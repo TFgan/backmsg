@@ -54,9 +54,10 @@ export default {
                 password:this.formLabelAlign.pass 
             }).then((res) => {
              console.log(res,123)
-             let {token}=res;
+             let {token}=res.data;
+             
              sessionStorage.setItem("token",token)
-             if(res.status===200){
+             if(res.meta.status===200){
               this.$message({
                message: '登录成功',
                type: 'success',
